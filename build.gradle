@@ -25,7 +25,10 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '1.4.1.RELEASE'
 
+	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.9.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.9.RELEASE'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
