@@ -1,5 +1,7 @@
 package com.cloudstudy.controller;
 
+import com.cloudstudy.facade.EurekaTestFacade;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,10 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class hello {
+    @Autowired
+    private EurekaTestFacade eurekaTestFacade;
     @ResponseBody
     @RequestMapping(value = "/")
     public String hello(){
-        return "Hello World!!!";
+        return eurekaTestFacade.getName();
     }
 
 }
