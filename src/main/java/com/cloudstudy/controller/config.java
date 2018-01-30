@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class config {
-    @Value("${env}")
+    @Value("${config.env}")
     String foo;
-    @Value("${name}")
+    @Value("${config.author}")
     String name;
 
     @ResponseBody
