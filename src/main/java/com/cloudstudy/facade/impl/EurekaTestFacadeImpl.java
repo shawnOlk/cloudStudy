@@ -17,4 +17,5 @@ public class EurekaTestFacadeImpl implements EurekaTestFacade {
     public String getName() {
         return restTemplate.getForObject("http://EUREKAPROVIDER/name", String.class);
     }
+
 }
