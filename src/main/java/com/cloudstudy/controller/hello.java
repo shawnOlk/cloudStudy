@@ -2,6 +2,7 @@ package com.cloudstudy.controller;
 
 import com.cloudstudy.facade.EurekaTestFacade;
 import com.cloudstudy.facade.FeignTestFacade;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +24,7 @@ public class hello {
      */
     @ResponseBody
     @RequestMapping(value = "/")
+    @ApiOperation(value="测试hello", notes="")
     public String hello(){
         return feignTestFacade.getName();
     }
