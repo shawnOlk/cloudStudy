@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloudstudy.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.cloudstudy.domain.UserBean">
+        <id column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List" >
+        user_id,user_name,password,phone
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+        where user_id = #{userId,jdbcType=BIGINT}
+    </select>
+    <select id="selectByPrimaryName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+        where user_name = #{userName,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+        delete from user_info
+        where user_id = #{userId,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.cloudstudy.domain.UserBean" useGeneratedKeys="true" keyProperty="query.userId" >
+
+        insert into user_info ( user_name, password,phone)
+        values (#{query.userName,jdbcType=VARCHAR},#{query.password,jdbcType=VARCHAR}, #{query.phone,jdbcType=VARCHAR}
+        )
+    </insert>
+    <update id="update" parameterType="com.cloudstudy.domain.UserBean">
+        UPDATE user_info SET user_id=#{query.userId,jdbcType=BIGINT}, user_name=#{query.userName,jdbcType=VARCHAR},password=#{query.password,jdbcType=VARCHAR}, phone=#{query.phone,jdbcType=VARCHAR}
+       WHERE user_id=#{query.userId,jdbcType=VARCHAR}
+    </update>
+</mapper>

@@ -1,4 +1,4 @@
-package com.cloudstudy.controller;
+package com.cloudstudy.common;
 
 import com.cloudstudy.exception.MyException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
