@@ -55,10 +55,5 @@ mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.winter.model
 
-#pagehelper分页插件
-pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
+
 

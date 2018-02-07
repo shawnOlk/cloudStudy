@@ -41,6 +41,7 @@ dependencies {
 	compile group: 'com.alibaba', name: 'druid', version: '1.1.7'
 	compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.6'
 	compile "org.projectlombok:lombok:1.16.4"
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.5.9.RELEASE'
 
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')

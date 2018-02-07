@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by sunlei on 28/01/2018.
  */
 @Controller
-public class config {
+public class ConfigCenterCotroller{
     @Value("${config.env}")
     String foo;
     @Value("${config.author}")

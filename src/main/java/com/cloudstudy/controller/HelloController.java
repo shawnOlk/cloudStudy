@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by sunlei on 28/01/2018.
  */
 @RestController
-public class hello {
+public class HelloController {
     @Autowired
     private EurekaTestFacade eurekaTestFacade;
     @Autowired
